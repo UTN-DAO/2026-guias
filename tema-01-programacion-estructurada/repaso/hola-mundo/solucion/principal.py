@@ -1,0 +1,4 @@
+from saludos import *
+
+saludar()
+

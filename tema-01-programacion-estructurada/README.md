@@ -19,11 +19,14 @@
 
 ## Conjuntos
 
+* [Eliminación de repetidos](./conjuntos/eliminacion-repetidos/)
 * [Lista de números](./conjuntos/numeros/)
 * [Palabras del Quijote](./conjuntos/quijote/)
 
 ## Diccionarios
 
+* [Agenda de países](./diccionarios/agenda-paises/)
+* [Calculadora con diccionario de operaciones](./diccionarios/calculadora/)
 * [Personas (versión 2, con un diccionario)](./diccionarios/personas/)
 * [Conteo de códigos postales por provincia](./diccionarios/codigos-postales/)
 
