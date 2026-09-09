@@ -1,0 +1,80 @@
+@startuml
+
+left to right direction
+
+'skinparam Monochrome true
+skinparam Shadowing true
+skinparam ClassFontName Monospaced
+'skinparam TitleBorderColor black
+skinparam TitleBorderThickness 1
+skinparam TitleBorderRoundCorner 20
+skinparam linetype ortho
+
+title "Empresa de transporte de cargas\n(Modelo)"
+
+
+/'skinparam defaultFontName Courier
+skinparam defaultFontSize 10
+'/
+
+'!theme sketchy-outline
+'!theme materia-outline
+
+class Camion {
+    -patente
+    -estado
+    -carga_maxima
+    -cargas
+    +__init__()
+    +__str__()
+    +cantidad_cargas()
+    +subir_carga(carga: Carga)
+    +bajar_carga(carga: Carga)
+    +peso_cargas()
+    +a_reparacion()
+    +sale_reparado()
+    +en_viaje()
+    +de_regreso()
+    +listo_para_salir()
+    +cargas_en_orden()
+
+}
+
+class Carga {
+    -contenido
+    +__init__()
+    +__str__()
+    +peso()
+}
+
+class Caja {
+    -peso
+    +__init__()
+    +__str__()
+    +peso()
+}
+
+class Packing {
+    -peso_por_caja
+    -cantidad
+    -peso_estructura
+    +__init__()
+    +__str__()
+    +peso()
+}
+
+class Bidon {
+    -capacidad
+    -densidad
+    +__init__()
+    +__str__()
+    +peso()
+}
+
+Carga <|--down- Caja : Es una
+Carga <|--down- Packing : Es una
+Carga <|--down- Bidon : Es una
+
+Carga <---up--o Camion: Tiene cero o más
+
+@enduml

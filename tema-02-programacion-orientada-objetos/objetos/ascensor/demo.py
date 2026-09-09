@@ -1,0 +1,21 @@
+from ascensor import Ascensor
+
+if __name__ == "__main__":
+    a = Ascensor(-2, 10, 5)
+    print(a)
+    print("ir_a_piso(3)", a.ir_a_piso(3))
+    print(a)
+    print("ir_a_piso(15)", a.ir_a_piso(15))
+    print(a)
+    print("subir(3)", a.subir(3))
+    print(a)
+    print("subir(4)", a.subir(4))
+    print(a)
+    print("subir(0)", a.subir(0))
+    print(a)
+    print("bajar(2)", a.bajar(2))
+    print(a)
+    print("bajar(10)", a.bajar(10))
+    print(a)
+    print("bajar(-1)", a.bajar(-1))
+    print(a)
