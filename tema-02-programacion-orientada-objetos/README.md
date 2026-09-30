@@ -29,4 +29,10 @@
 
 * [Transporte de cargas](./ejercicio-integrador)
 
+## Modelos de parcial
+
+* [La inmobiliaria](./modelos-parcial/inmobiliaria/)
+* [La fábrica](./modelos-parcial/fabrica/)
+* [El supermercado](./modelos-parcial/supermercado/)
+
 

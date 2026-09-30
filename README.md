@@ -8,5 +8,6 @@ Las soluciones de los mismos se publican a medida que se van viendo los temas.
 
 1. [Programación estructurada](./tema-01-programacion-estructurada/) — repaso de Python, lectura de archivos csv/json, conjuntos, diccionarios, programación funcional
 2. [Programación orientada a objetos](./tema-02-programacion-orientada-objetos/) — objetos, herencia, polimorfismo, excepciones, testing
+3. [Persistencia con SQLite](./tema-03-persistencia/) — acceso a bases de datos y ABM con persistencia
 
 
