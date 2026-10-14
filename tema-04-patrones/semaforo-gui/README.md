@@ -9,11 +9,14 @@ Requiere un entorno con interfaz gráfica (tkinter viene con Python).
 Ejecutar la ventana:
 
 ```
-python semaforo_gui.py
+python main.py
 ```
 
 Demo por consola, sin interfaz gráfica:
 
 ```
-python semaforo_gui.py --consola
+python main.py --consola
 ```
+
+La lógica del patrón vive en `estado.py` y `semaforo.py`; la ventana, en
+`ventana.py`.

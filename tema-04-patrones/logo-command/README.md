@@ -10,11 +10,14 @@ Requiere un entorno con interfaz gráfica (tkinter viene con Python).
 Ejecutar la ventana:
 
 ```
-python logo_command.py
+python main.py
 ```
 
 Interpretar un programa LOGO por consola, sin interfaz gráfica:
 
 ```
-python logo_command.py --consola "REPITE 4 [ AVANZA 120 GIRADERECHA 90 ]"
+python main.py --consola "REPITE 4 [ AVANZA 120 GIRADERECHA 90 ]"
 ```
+
+La lógica está repartida en `tortuga.py` (receptor), `comandos.py` (patrón),
+`parser.py` (lenguaje) y `programas.py` (ejemplos); la ventana, en `ventana.py`.

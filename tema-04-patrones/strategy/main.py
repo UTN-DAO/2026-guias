@@ -1,8 +1,10 @@
+"""Demostración del patrón Strategy para el cálculo de envío.
+
+El cliente decide la estrategia y la inyecta en el contexto, que sólo delega.
 """
-Demostracion del patron Strategy para el calculo de envio.
-"""
-from envios import (CalculadorEnvio, EnvioEstandar, EnvioExpreso,
-                    TarifaPlana, EnvioPorVolumen, ESTRATEGIAS, Paquete)
+from envio import CalculadorEnvio, Paquete
+from estrategias import (EnvioEstandar, EnvioExpreso, TarifaPlana,
+                         EnvioPorVolumen, ESTRATEGIAS)
 
 
 def main():
@@ -13,7 +15,7 @@ def main():
     for estrategia in (EnvioEstandar, EnvioExpreso, TarifaPlana,
                        EnvioPorVolumen):
         calculador.set_estrategia(estrategia())
-        print(f"{calculador._estrategia.nombre:<12}: $ {calculador.calcular(paquete):.2f}")
+        print(f"{calculador.estrategia.nombre:<12}: $ {calculador.calcular(paquete):.2f}")
 
     print("\n=== Con diccionario de funciones ===")
     for nombre, funcion in ESTRATEGIAS.items():

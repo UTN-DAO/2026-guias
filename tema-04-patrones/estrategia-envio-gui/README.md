@@ -10,11 +10,14 @@ Requiere un entorno con interfaz gráfica (tkinter viene con Python).
 Ejecutar la ventana:
 
 ```
-python estrategia_envio_gui.py
+python main.py
 ```
 
 Demo por consola, sin interfaz gráfica:
 
 ```
-python estrategia_envio_gui.py --consola
+python main.py --consola
 ```
+
+Las estrategias viven en `estrategias.py`, el contexto en `envio.py` y la
+ventana en `ventana.py`.

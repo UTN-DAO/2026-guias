@@ -1,5 +1,6 @@
 """Demostración del patrón Facade: ABM de personas a través de una fachada."""
-from fachada import FachadaPersonas, ServicioPersonas
+from fachada import FachadaPersonas
+from cliente import ServicioPersonas
 
 
 def main():
@@ -19,7 +20,7 @@ def main():
     servicio.mostrar()
 
     print("\nAuditoria:")
-    for evento in fachada._auditoria.eventos:
+    for evento in fachada.historial():
         print("   ", evento)
 
 

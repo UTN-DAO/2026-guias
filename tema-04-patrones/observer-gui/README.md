@@ -10,11 +10,14 @@ Requiere un entorno con interfaz gráfica (tkinter viene con Python).
 Ejecutar la ventana:
 
 ```
-python observer_gui.py
+python main.py
 ```
 
 Demo por consola, sin interfaz gráfica:
 
 ```
-python observer_gui.py --consola
+python main.py --consola
 ```
+
+El modelo vive en `precios.py`, las vistas en `vistas.py` y la ventana en
+`ventana.py`.

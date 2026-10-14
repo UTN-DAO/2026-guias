@@ -1,41 +1,17 @@
-from factory import Factory, Product
-from random import choice, randint, random
+"""Demostración del patrón Factory Method con dos fábricas concretas."""
+from random import choice
 
-class Veterinaria (Factory):
-    def factory_method(self):
-        nombres = ("Boby","Batuque","Sultan","Michifus","Rosalía")
-        return Mascota(choice(nombres),randint(1,10),random()*10000)
+from factory import Veterinaria, Forrajeria
 
-class Forrajeria (Factory):
-    def factory_method(self):
-        nombres = ("Royal Canin","KMeal","Wiskas","Suelto","Ravioles")
-        return Alimento(choice(nombres),randint(2,10),random()*8000)
 
-class Mascota(Product):
-    def __init__(self, nombre : str, cantidad : int, precio : float):
-        self.nombre = nombre
-        self.cantidad = cantidad
-        self.precio = precio
-    def __str__(self):
-        return f"Mascota: {self.nombre}, Cantidad: {self.cantidad}, Precio: {self.precio}"
-    def operation (self):
-        return self.cantidad*self.precio
+def main():
+    proveedores = [Veterinaria(), Forrajeria()]
+    productos = [choice(proveedores).factory_method() for _ in range(10)]
 
-class Alimento(Product):
-    def __init__(self, nombre : str, cantidad : int, precio : float):
-        self.nombre = nombre
-        self.cantidad = cantidad
-        self.precio = precio
-    def __str__(self):
-        return f"Alimento: {self.nombre}, Cantidad: {self.cantidad}, Precio: {self.precio:.2f}"
-    def operation (self):
-        return self.cantidad*self.precio
+    for producto in productos:
+        print(producto)
+        print(f"TOTAL: {producto.operation():.2f}")
 
-proveedores = [Veterinaria(),Forrajeria()]
-productos = []
-for i in range (10):
-    producto = choice(proveedores).factory_method ()
-    productos.append(producto)
-for producto in productos:
-    print (producto)
-    print (f"TOTAL: {producto.operation():.2f}")
+
+if __name__ == "__main__":
+    main()

@@ -1,8 +1,7 @@
-"""
-Patron Strategy: calculo del coste de envio.
+"""Estrategias concretas de cálculo de envío (patrón Strategy).
 
-El contexto (CalculadorEnvio) delega el calculo en la estrategia que el
-cliente le asigna. Agregar una estrategia nueva no modifica el contexto.
+Incluye una variante sin herencia: un diccionario que asocia el nombre de la
+estrategia con la función que la calcula.
 """
 from abc import ABC, abstractmethod
 
@@ -12,13 +11,7 @@ class EstrategiaEnvio(ABC):
 
     @abstractmethod
     def calcular(self, paquete):
-        pass
-
-
-class Paquete:
-    def __init__(self, peso, distancia):
-        self.peso = peso
-        self.distancia = distancia
+        ...
 
 
 class EnvioEstandar(EstrategiaEnvio):
@@ -50,18 +43,6 @@ class EnvioPorVolumen(EstrategiaEnvio):
         return round(3.0 + 0.02 * volumen + 0.03 * paquete.distancia, 2)
 
 
-class CalculadorEnvio:
-    def __init__(self, estrategia):
-        self._estrategia = estrategia
-
-    def set_estrategia(self, estrategia):
-        self._estrategia = estrategia
-
-    def calcular(self, paquete):
-        return self._estrategia.calcular(paquete)
-
-
-# Variante sin herencia: diccionario de funciones
 def estandar_fn(paquete):
     return round(5.0 + 1.0 * paquete.peso + 0.05 * paquete.distancia, 2)
 

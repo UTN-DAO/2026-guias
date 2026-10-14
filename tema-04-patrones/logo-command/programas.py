@@ -1,0 +1,17 @@
+"""Programas LOGO de ejemplo usados por la ventana y la demo de consola."""
+
+EJEMPLO = """COLOR azul
+REPITE 4 [ AVANZA 120 GIRADERECHA 90 ]
+COLOR rojo
+AVANZA 60
+GIRADERECHA 90
+AVANZA 60
+"""
+
+ESPIRAL = """COLOR verde
+REPITE 36 [ REPITE 4 [ AVANZA 40 GIRADERECHA 90 ] GIRADERECHA 10 ]
+"""
+
+ESTRELLA = """COLOR naranja
+REPITE 5 [ AVANZA 160 GIRADERECHA 144 ]
+"""

@@ -1,8 +1,8 @@
 """
 Demostracion del patron Command: circuito de alta de clientes.
 """
-from circuito import (Solicitud, RepositorioClientes, Notificador,
-                      ProcesadorCircuito, circuito_para)
+from circuito import Solicitud, RepositorioClientes, Notificador
+from comandos import ProcesadorCircuito, circuito_para
 
 
 def main():

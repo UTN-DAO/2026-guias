@@ -1,22 +1,32 @@
-'''
-Ejemplo de implementación de patrón Singleton
-'''
+"""Patrón Singleton: garantiza una única instancia de una clase.
+
+La idea es controlar la creación del objeto desde el propio tipo, de modo que
+sucesivas llamadas devuelvan siempre la misma instancia.
+
+* ``Singleton`` -> implementación genérica del patrón.
+* ``DBConnection`` -> ejemplo concreto: la conexión a la base es única en todo
+  el programa, aunque se pida más de una vez.
+"""
+
 
 class Singleton:
-    # Variable de instancia, para contener el objeto
+    # Variable de instancia, para contener el objeto.
     _instance = None
 
     def __new__(cls):
-        """El operador __new__ se dispara automáticamente al
-        crear un objeto de una clase. 
-        :cls: Clase que se está creando
-        :return: Devuelve un nuevo objeto
-        """
-        # Si no está asignado _instance
-        if cls._instance is None: 
-            # Pedirle al padre (super), que cree un objeto cls 
-            # y lo asigne a _instance
+        # Si no está asignado _instance, pedirle al padre (super) que cree un
+        # objeto cls; si ya estaba, se reutiliza.
+        if cls._instance is None:
             cls._instance = super(Singleton, cls).__new__(cls)
-        # Retornar _instance, ya sea si estaba asignado o
-        # si se acaba de crear 
+        return cls._instance
+
+
+class DBConnection:
+    _instance = None
+    dbconnection = None
+
+    def __new__(cls, connection_string):
+        if not cls._instance:
+            cls._instance = super(DBConnection, cls).__new__(cls)
+            cls.dbconnection = connection_string
         return cls._instance

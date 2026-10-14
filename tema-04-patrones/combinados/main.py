@@ -1,6 +1,7 @@
 """Demostración: State + Strategy + Observer bajo una fachada."""
-from sistema_pedidos import (FachadaPedidos, Auditoria, NotificadorCliente,
-                             TransicionInvalida)
+from fachada import FachadaPedidos
+from observadores import Auditoria, NotificadorCliente
+from estados import TransicionInvalida
 
 
 def mostrar(fachada):
