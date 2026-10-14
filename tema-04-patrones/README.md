@@ -19,3 +19,11 @@
 ## Combinación de patrones
 
 * [Combinados](./combinados/) — State + Strategy + Observer bajo una fachada
+
+## Ejemplos con interfaz gráfica (tkinter)
+
+* [Semáforo GUI](./semaforo-gui/) — State con ventana
+* [Cálculo de envío GUI](./estrategia-envio-gui/) — Strategy con ventana
+* [Lista de precios GUI](./observer-gui/) — Observer con ventana
+* [Intérprete LOGO GUI](./logo-command/) — Command con ventana
+
